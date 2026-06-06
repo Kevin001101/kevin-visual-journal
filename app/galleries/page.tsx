@@ -18,6 +18,7 @@ export default function GalleriesPage() {
       <div className="space-y-16">
         {groupedGalleries.map(({ region, galleries }) => (
           <section
+            id={region.toLowerCase().replace(/\s+/g, "-")}
             key={region}
             className="grid gap-8 border-b border-line pb-12 lg:grid-cols-[260px_1fr]"
           >

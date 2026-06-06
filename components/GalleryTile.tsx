@@ -7,8 +7,12 @@ type GalleryTileProps = {
 
 export default function GalleryTile({ item }: GalleryTileProps) {
   return (
-    <Link href={`/galleries/${item.slug}`} className="gallery-tile">
-      <img src={item.coverImage} alt={item.title} loading="lazy" />
+    <Link href={item.href ?? `/galleries/${item.slug}`} className="gallery-tile">
+      <span
+        className="gallery-tile-image"
+        style={{ backgroundImage: `url(${item.coverImage})` }}
+        aria-hidden="true"
+      />
       <span className="gallery-tile-text">
         <span className="gallery-tile-date">{item.date}</span>
         <span className="gallery-tile-title">{item.title}</span>

@@ -14,6 +14,7 @@ export type GalleryWallItem = {
   slug: string;
   date: string;
   coverImage: string;
+  href?: string;
 };
 
 export const regionOrder = [
@@ -198,10 +199,11 @@ export const latestGalleries = galleries.slice(0, 4);
 
 export const galleryWallItems: GalleryWallItem[] = [
   {
-    title: "澳门街巷",
-    slug: "macau-streets",
+    title: "澳门",
+    slug: "macau",
     date: "2026",
-    coverImage: photoSet[1],
+    coverImage: macauFireworksPhotos[3],
+    href: "/galleries#macau",
   },
   {
     title: "澳门烟花",
@@ -210,34 +212,11 @@ export const galleryWallItems: GalleryWallItem[] = [
     coverImage: macauFireworksPhotos[5],
   },
   {
-    title: "氹仔",
-    slug: "taipa",
-    date: "2026",
-    coverImage: photoSet[2],
-  },
-  {
-    title: "路环",
-    slug: "coloane",
-    date: "2026",
-    coverImage: photoSet[3],
-  },
-  {
-    title: "香港街头",
-    slug: "hong-kong-streets",
+    title: "香港",
+    slug: "hong-kong",
     date: "2025",
     coverImage: photoSet[2],
-  },
-  {
-    title: "麦理浩径",
-    slug: "maclehose-trail",
-    date: "2025",
-    coverImage: photoSet[1],
-  },
-  {
-    title: "维多利亚港",
-    slug: "victoria-harbour",
-    date: "2025",
-    coverImage: photoSet[0],
+    href: "/galleries#hong-kong",
   },
   {
     title: "武汉",
@@ -252,16 +231,18 @@ export const galleryWallItems: GalleryWallItem[] = [
     coverImage: photoSet[1],
   },
   {
-    title: "山西五台山",
-    slug: "mount-wutai",
+    title: "山西",
+    slug: "shanxi",
     date: "2025",
     coverImage: photoSet[2],
+    href: "/galleries#mainland-china",
   },
   {
-    title: "西藏库拉岗日",
-    slug: "kula-kangri",
+    title: "西藏",
+    slug: "tibet",
     date: "2025",
     coverImage: photoSet[0],
+    href: "/galleries#mainland-china",
   },
   {
     title: "新疆",
@@ -270,22 +251,29 @@ export const galleryWallItems: GalleryWallItem[] = [
     coverImage: photoSet[3],
   },
   {
-    title: "新加坡街头",
-    slug: "singapore-streets",
+    title: "新加坡",
+    slug: "singapore",
     date: "2026",
     coverImage: photoSet[1],
+    href: "/galleries#singapore",
   },
   {
-    title: "城市片段",
-    slug: "city-fragments",
-    date: "2026",
+    title: "登山",
+    slug: "mount-wutai",
+    date: "2025",
+    coverImage: photoSet[2],
+  },
+  {
+    title: "徒步",
+    slug: "kula-kangri",
+    date: "2025",
     coverImage: photoSet[0],
   },
   {
-    title: "武汉至长沙骑行",
+    title: "骑行",
     slug: "wuhan-to-changsha-ride",
     date: "2024",
-    coverImage: photoSet[0],
+    coverImage: photoSet[1],
   },
 ];
 
