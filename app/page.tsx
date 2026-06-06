@@ -1,18 +1,9 @@
 import Link from "next/link";
-import { getGalleriesByRegion, latestGalleries } from "@/data/galleries";
-
-const homeNavItems = [
-  { href: "/", label: "Home" },
-  { href: "/galleries", label: "Galleries" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+import { latestGalleries } from "@/data/galleries";
 
 export default function Home() {
-  const groupedGalleries = getGalleriesByRegion();
-
   return (
-    <div className="home-flow">
+    <main className="home-flow">
       <section className="home-flow-section home-cover">
         <div
           className="home-cover-image"
@@ -21,68 +12,20 @@ export default function Home() {
         />
         <div className="home-cover-shade" />
 
-        <div className="home-cover-top">
-          <Link href="/" className="home-cover-brand">
-            Kevin Visual Journal
-            <span>Kevin 影像日志</span>
-          </Link>
-          <nav className="home-cover-nav" aria-label="Home navigation">
-            {homeNavItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
         <div className="home-cover-content">
-          <p className="home-cover-kicker">Journeys, trails, streets and places.</p>
           <h1>Kevin Visual Journal</h1>
-          <p className="home-cover-subtitle">
-            记录走过的路、到达的地方，与那些短暂停留的光。
-          </p>
-        </div>
-
-        <a href="#home-galleries" className="home-scroll-cue">
-          Scroll
-        </a>
-      </section>
-
-      <section id="home-galleries" className="home-flow-section home-index">
-        <div className="home-section-inner">
-          <div className="home-section-heading">
-            <p>Galleries</p>
-            <h2>到达之地档案</h2>
-            <span>
-              按地区、城市、山径和路线归档。这里更像旅行摄影网站的地点索引，而不是作品集橱窗。
-            </span>
-          </div>
-
-          <div className="home-region-directory">
-            {groupedGalleries.map(({ region, galleries }) => (
-              <div key={region} className="home-region-block">
-                <h3>{region}</h3>
-                <div className="home-region-links">
-                  {galleries.map((gallery) => (
-                    <Link key={gallery.slug} href={`/galleries/${gallery.slug}`}>
-                      {gallery.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="home-cover-subtitle">记录走过的路与到达的地方。</p>
+          <Link href="/galleries" className="home-primary-link">
+            进入影像目录
+          </Link>
         </div>
       </section>
 
       <section className="home-flow-section home-latest">
         <div className="home-section-inner">
           <div className="home-section-heading">
-            <p>Latest Galleries</p>
-            <h2>旅行记录列表</h2>
-            <span>
-              以文章列表的方式进入最近整理的相册，保留日期、简介和继续阅读入口。
-            </span>
+            <p>Latest</p>
+            <h2>最新影像记录</h2>
           </div>
 
           <div className="home-article-list">
@@ -110,6 +53,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

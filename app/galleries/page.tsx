@@ -1,5 +1,4 @@
-import GalleryCard from "@/components/GalleryCard";
-import SectionTitle from "@/components/SectionTitle";
+import Link from "next/link";
 import { getGalleriesByRegion } from "@/data/galleries";
 
 export default function GalleriesPage() {
@@ -7,43 +6,39 @@ export default function GalleriesPage() {
 
   return (
     <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 md:py-24 lg:px-10">
-      <SectionTitle
-        eyebrow="Archive Index"
-        title="GALLERIES"
-        description="到达之地、山径、街巷与远行路线的影像档案。"
-      />
-
-      <div className="mb-20 border-y border-line py-8">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <h1 className="font-serif text-5xl leading-none text-ink sm:text-7xl">
-            地区、城市与路线构成这份旅行索引。
-          </h1>
-          <p className="max-w-2xl text-base leading-8 text-muted lg:ml-auto">
-            这里不按商业作品集的方式陈列照片，而是按抵达过的地方、走过的山径和完成过的路线归档。每个相册都是一段可以继续补充的个人影像记录。
-          </p>
-        </div>
+      <div className="mb-14 border-b border-line pb-8">
+        <p className="text-xs uppercase tracking-[0.28em] text-accent">
+          Galleries
+        </p>
+        <h1 className="mt-4 font-serif text-6xl leading-none text-ink sm:text-8xl">
+          影像目录
+        </h1>
       </div>
 
-      <div className="space-y-24">
+      <div className="space-y-16">
         {groupedGalleries.map(({ region, galleries }) => (
-          <section key={region} className="grid gap-10 lg:grid-cols-[280px_1fr]">
-            <div className="lg:sticky lg:top-28 lg:self-start">
-              <p className="text-xs uppercase tracking-[0.28em] text-accent">
-                Region
-              </p>
-              <h2 className="mt-4 font-serif text-4xl text-ink">{region}</h2>
-              <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted">
-                {galleries.length} galleries
-              </p>
-            </div>
-
-            <div className="grid gap-12">
-              {galleries.map((gallery, index) => (
-                <GalleryCard
+          <section
+            key={region}
+            className="grid gap-8 border-b border-line pb-12 lg:grid-cols-[260px_1fr]"
+          >
+            <h2 className="font-serif text-4xl text-ink">{region}</h2>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {galleries.map((gallery) => (
+                <Link
                   key={gallery.slug}
-                  gallery={gallery}
-                  index={index}
-                />
+                  href={`/galleries/${gallery.slug}`}
+                  className="group border-t border-line pt-4"
+                >
+                  <p className="text-xs uppercase tracking-[0.2em] text-accent">
+                    {gallery.category} / {gallery.date}
+                  </p>
+                  <h3 className="mt-3 font-serif text-3xl text-ink transition group-hover:text-accent">
+                    {gallery.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {gallery.description}
+                  </p>
+                </Link>
               ))}
             </div>
           </section>

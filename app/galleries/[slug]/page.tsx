@@ -44,36 +44,28 @@ export default async function GalleryDetailPage({ params }: GalleryPageProps) {
 
   return (
     <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 md:py-24 lg:px-10">
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
-        <div>
-          <p className="mb-5 text-xs uppercase tracking-[0.28em] text-accent">
-            {gallery.region} / {gallery.category} / {gallery.date}
-          </p>
-          <h1 className="font-serif text-6xl leading-none text-ink sm:text-8xl">
-            {gallery.title}
-          </h1>
-        </div>
-        <p className="max-w-2xl text-lg leading-9 text-muted lg:ml-auto">
+      <div className="border-b border-line pb-10">
+        <p className="mb-5 text-xs uppercase tracking-[0.28em] text-accent">
+          {gallery.region} / {gallery.category} / {gallery.date}
+        </p>
+        <h1 className="font-serif text-6xl leading-none text-ink sm:text-8xl">
+          {gallery.title}
+        </h1>
+        <p className="mt-6 max-w-2xl text-base leading-7 text-muted">
           {gallery.description}
         </p>
       </div>
 
-      <div
-        className="mt-14 min-h-[340px] bg-fog bg-cover bg-center sm:min-h-[540px]"
-        style={{ backgroundImage: `url(${gallery.coverImage})` }}
-        aria-label={`${gallery.title} cover`}
-      />
-
-      <div className="mt-20">
+      <div className="mt-14">
         <PhotoGrid images={gallery.images} title={gallery.title} />
       </div>
 
-      <div className="mt-20 border-t border-line pt-8">
+      <div className="mt-16 border-t border-line pt-8">
         <Link
           href="/galleries"
           className="inline-flex border-b border-accent pb-1 text-xs uppercase tracking-[0.22em] text-ink transition hover:text-accent"
         >
-          Back to Galleries / 返回相册
+          返回影像目录
         </Link>
       </div>
     </section>

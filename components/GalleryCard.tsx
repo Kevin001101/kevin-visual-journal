@@ -49,7 +49,7 @@ export default function GalleryCard({ gallery, index }: GalleryCardProps) {
           href={`/galleries/${gallery.slug}`}
           className="inline-flex w-fit border-b border-accent pb-1 text-xs uppercase tracking-[0.22em] text-ink transition hover:text-accent"
         >
-          View gallery
+          View
         </Link>
       </div>
     </article>
