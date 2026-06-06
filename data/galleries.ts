@@ -31,6 +31,16 @@ const photoSet = [
   "/photos/placeholder-4.jpg",
 ];
 
+const macauFireworksPhotos = [
+  "/photos/macau-fireworks/DSC01615.jpg",
+  "/photos/macau-fireworks/DSC01625.jpg",
+  "/photos/macau-fireworks/DSC01629.jpg",
+  "/photos/macau-fireworks/DSC01644.jpg",
+  "/photos/macau-fireworks/DSC01646.jpg",
+  "/photos/macau-fireworks/DSC01647.jpg",
+  "/photos/macau-fireworks/DSC01677.jpg",
+];
+
 export const galleries: Gallery[] = [
   {
     title: "Macau Streets",
@@ -41,6 +51,16 @@ export const galleries: Gallery[] = [
     description: "澳门街头的光与坡道。",
     coverImage: photoSet[1],
     images: [photoSet[1], photoSet[2], photoSet[0], photoSet[3], photoSet[1]],
+  },
+  {
+    title: "Macau Fireworks",
+    slug: "macau-fireworks",
+    region: "Macau",
+    category: "Night",
+    date: "2026",
+    description: "澳门夜空里的烟花。",
+    coverImage: macauFireworksPhotos[5],
+    images: macauFireworksPhotos,
   },
   {
     title: "Taipa",
@@ -182,6 +202,12 @@ export const galleryWallItems: GalleryWallItem[] = [
     slug: "macau-streets",
     date: "2026",
     coverImage: photoSet[1],
+  },
+  {
+    title: "澳门烟花",
+    slug: "macau-fireworks",
+    date: "2026",
+    coverImage: macauFireworksPhotos[5],
   },
   {
     title: "氹仔",
