@@ -24,7 +24,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -44,27 +44,18 @@ a {
   text-decoration: none;
 }
 
-.home-snap {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: none;
-}
-
-.home-snap::-webkit-scrollbar {
-  display: none;
-}
-
-.home-snap-section {
+.home-flow {
   min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+}
+
+.home-flow-section {
+  min-height: auto;
 }
 
 .home-cover {
   position: relative;
   display: flex;
+  min-height: clamp(680px, 88vh, 920px);
   overflow: hidden;
   color: #f4f0e8;
 }
@@ -187,6 +178,8 @@ a {
 .home-latest {
   display: flex;
   align-items: center;
+  min-height: auto;
+  padding: clamp(44px, 8vw, 96px) 0;
   background: #f4f0e8;
 }
 

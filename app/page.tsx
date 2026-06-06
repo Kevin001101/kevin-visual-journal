@@ -12,8 +12,8 @@ export default function Home() {
   const groupedGalleries = getGalleriesByRegion();
 
   return (
-    <div className="home-snap">
-      <section className="home-snap-section home-cover">
+    <div className="home-flow">
+      <section className="home-flow-section home-cover">
         <div
           className="home-cover-image"
           style={{ backgroundImage: "url('/photos/placeholder-1.jpg')" }}
@@ -48,7 +48,7 @@ export default function Home() {
         </a>
       </section>
 
-      <section id="home-galleries" className="home-snap-section home-index">
+      <section id="home-galleries" className="home-flow-section home-index">
         <div className="home-section-inner">
           <div className="home-section-heading">
             <p>Galleries</p>
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-snap-section home-latest">
+      <section className="home-flow-section home-latest">
         <div className="home-section-inner">
           <div className="home-section-heading">
             <p>Latest Galleries</p>
