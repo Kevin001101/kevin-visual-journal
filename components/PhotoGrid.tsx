@@ -1,21 +1,18 @@
-import WorkCard from "@/components/WorkCard";
-import type { Work } from "@/data/works";
-
 type PhotoGridProps = {
-  works: Work[];
+  images: string[];
+  title?: string;
 };
 
-export default function PhotoGrid({ works }: PhotoGridProps) {
+export default function PhotoGrid({ images, title = "Gallery photo" }: PhotoGridProps) {
   return (
-    <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
-      {works.map((work, index) => (
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {images.map((image, index) => (
         <div
-          key={work.id}
-          id={work.id}
-          className={index % 2 === 1 ? "md:pt-20" : undefined}
-        >
-          <WorkCard work={work} />
-        </div>
+          key={`${image}-${index}`}
+          className="min-h-[260px] bg-fog bg-cover bg-center sm:min-h-[340px]"
+          style={{ backgroundImage: `url(${image})` }}
+          aria-label={`${title} ${index + 1}`}
+        />
       ))}
     </div>
   );
