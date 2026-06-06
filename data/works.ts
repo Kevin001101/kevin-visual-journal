@@ -12,6 +12,16 @@ export type Work = {
   tags: string[];
 };
 
+export type PlaceArchive = {
+  id: string;
+  name: string;
+  englishName: string;
+  tags: string[];
+  description: string;
+  image: string;
+  note: string;
+};
+
 export const categoryMeta: Record<
   WorkCategory,
   {
@@ -157,6 +167,89 @@ export const places = [
   "Shanxi",
   "Xinjiang",
   "Singapore",
+];
+
+export const placeArchives: PlaceArchive[] = [
+  {
+    id: "macau",
+    name: "Macau",
+    englishName: "Macau",
+    tags: ["Street", "City"],
+    description:
+      "坡道、旧墙、葡式窗框和午后光线，适合收集细小但有温度的街头片段。",
+    image: "/photos/placeholder-2.jpg",
+    note: "Street archive / old town light",
+  },
+  {
+    id: "hong-kong",
+    name: "Hong Kong",
+    englishName: "Hong Kong",
+    tags: ["Street", "Trail", "City"],
+    description:
+      "高密度城市、天桥、市场和山海步道并置，像一份不断折叠展开的地图。",
+    image: "/photos/placeholder-3.jpg",
+    note: "City layers / trails and streets",
+  },
+  {
+    id: "wuhan",
+    name: "Wuhan",
+    englishName: "Wuhan",
+    tags: ["Journey", "City"],
+    description:
+      "江岸、桥、骑行出发点和日常街道，把城市记录成一段旅程的起笔。",
+    image: "/photos/placeholder-1.jpg",
+    note: "River city / departure notes",
+  },
+  {
+    id: "changsha",
+    name: "Changsha",
+    englishName: "Changsha",
+    tags: ["Journey", "City"],
+    description:
+      "长途抵达后的夜色、街口、桥下灯光和城市气味，适合成为路线的终章。",
+    image: "/photos/placeholder-2.jpg",
+    note: "Arrival city / road ending",
+  },
+  {
+    id: "tibet",
+    name: "Tibet",
+    englishName: "Tibet",
+    tags: ["Trail", "Mountain"],
+    description:
+      "高原、雪线、湖面和营地，在稀薄空气里留下更慢、更安静的影像索引。",
+    image: "/photos/placeholder-1.jpg",
+    note: "Plateau archive / snow line",
+  },
+  {
+    id: "shanxi",
+    name: "Shanxi",
+    englishName: "Shanxi",
+    tags: ["Trail", "Heritage"],
+    description:
+      "山寺、古建、冷空气与清晨路面，记录时间沉下来的北方质地。",
+    image: "/photos/placeholder-3.jpg",
+    note: "Temples / mountains / cold mornings",
+  },
+  {
+    id: "singapore",
+    name: "Singapore",
+    englishName: "Singapore",
+    tags: ["City", "Fragments"],
+    description:
+      "热带树影、地铁出口、街角建筑和短暂停留，把城市切成轻盈的片段。",
+    image: "/photos/placeholder-1.jpg",
+    note: "Tropical fragments / city shade",
+  },
+  {
+    id: "xinjiang",
+    name: "Xinjiang",
+    englishName: "Xinjiang",
+    tags: ["Journey", "Landscape"],
+    description:
+      "辽阔道路、荒漠边缘、远山和长距离移动，适合归档那些关于空间的照片。",
+    image: "/photos/placeholder-2.jpg",
+    note: "Open road / distant landscape",
+  },
 ];
 
 export function getWorksByCategory(category: WorkCategory) {
