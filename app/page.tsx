@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { latestGalleries } from "@/data/galleries";
+import GalleryWall from "@/components/GalleryWall";
 
 export default function Home() {
   return (
@@ -21,38 +21,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-flow-section home-latest">
-        <div className="home-section-inner">
-          <div className="home-section-heading">
-            <p>Latest</p>
-            <h2>最新影像记录</h2>
-          </div>
-
-          <div className="home-article-list">
-            {latestGalleries.map((gallery) => (
-              <article key={gallery.slug} className="home-article-item">
-                <div>
-                  <p className="home-article-date">
-                    {gallery.date} / {gallery.region} / {gallery.category}
-                  </p>
-                  <h3>
-                    <Link href={`/galleries/${gallery.slug}`}>
-                      {gallery.title}
-                    </Link>
-                  </h3>
-                </div>
-                <p>{gallery.description}</p>
-                <Link
-                  href={`/galleries/${gallery.slug}`}
-                  className="home-read-more"
-                >
-                  Read more
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GalleryWall />
     </main>
   );
 }
