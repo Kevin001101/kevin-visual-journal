@@ -10,7 +10,9 @@ export default function GalleryTile({ item }: GalleryTileProps) {
     <Link href={item.href ?? `/galleries/${item.slug}`} className="gallery-tile">
       <span
         className="gallery-tile-image"
-        style={{ backgroundImage: `url(${item.coverImage})` }}
+        style={{
+          backgroundImage: `url(${item.coverImage}), linear-gradient(135deg, #8c8274, #2d2a26)`,
+        }}
         aria-hidden="true"
       />
       <span className="gallery-tile-text">

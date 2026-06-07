@@ -352,7 +352,7 @@ a {
   display: block;
   color: white;
   text-decoration: none;
-  background: #1f1f1f;
+  background: #4d473f;
 }
 
 .gallery-tile-image {
@@ -361,9 +361,7 @@ a {
   width: 100%;
   height: 100%;
   display: block;
-  background:
-    linear-gradient(135deg, rgba(166, 124, 82, 0.34), rgba(31, 31, 31, 0.9)),
-    #1f1f1f;
+  background-color: #4d473f;
   background-position: center;
   background-size: cover;
   transition: transform 0.6s ease;
@@ -373,7 +371,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
   transition: background 0.3s ease;
 }
@@ -383,7 +381,7 @@ a {
 }
 
 .gallery-tile:hover::after {
-  background: rgba(0, 0, 0, 0.42);
+  background: rgba(0, 0, 0, 0.24);
 }
 
 .gallery-tile-text {
@@ -411,7 +409,7 @@ a {
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: 1px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.48);
 }
 
 @media (max-width: 980px) {
