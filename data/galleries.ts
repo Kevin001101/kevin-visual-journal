@@ -74,6 +74,32 @@ const kulaKangriDetailPhotos = [
   "/photos/optimized/kula-kangri/detail/DSC05107.jpg",
 ];
 
+const mountSiguniangWallPhotos = [
+  "/photos/optimized/mount-siguniang/wall/siguniang-01.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-02.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-03.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-04.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-05.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-06.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-07.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-08.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-09.jpg",
+  "/photos/optimized/mount-siguniang/wall/siguniang-10.jpg",
+];
+
+const mountSiguniangDetailPhotos = [
+  "/photos/optimized/mount-siguniang/detail/siguniang-01.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-02.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-03.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-04.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-05.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-06.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-07.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-08.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-09.jpg",
+  "/photos/optimized/mount-siguniang/detail/siguniang-10.jpg",
+];
+
 const galleryImages = (offset = 0) =>
   detailPhotos.map((_, index) => detailPhotos[(index + offset) % detailPhotos.length]);
 
@@ -189,6 +215,16 @@ export const galleries: Gallery[] = [
     images: kulaKangriDetailPhotos,
   },
   {
+    title: "Sichuan Mount Siguniang",
+    slug: "mount-siguniang",
+    region: "Mainland China",
+    category: "Mountain",
+    date: "2026",
+    description: "四姑娘山登山。",
+    coverImage: mountSiguniangWallPhotos[1],
+    images: mountSiguniangDetailPhotos,
+  },
+  {
     title: "Xinjiang",
     slug: "xinjiang",
     region: "Mainland China",
@@ -294,9 +330,9 @@ export const galleryWallItems: GalleryWallItem[] = [
   },
   {
     title: "登山",
-    slug: "mount-wutai",
-    date: "2025",
-    coverImage: wallPhotos[0],
+    slug: "mount-siguniang",
+    date: "2026",
+    coverImage: mountSiguniangWallPhotos[1],
   },
   {
     title: "徒步",
