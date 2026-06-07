@@ -1,14 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import GalleryWall from "@/components/GalleryWall";
+import { homeHeroImage } from "@/data/galleries";
 
 export default function Home() {
   return (
     <main className="home-flow">
       <section className="home-flow-section home-cover">
-        <div
+        <Image
+          src={homeHeroImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
           className="home-cover-image"
-          style={{ backgroundImage: "url('/photos/placeholder-1.jpg')" }}
-          aria-hidden="true"
         />
         <div className="home-cover-shade" />
 

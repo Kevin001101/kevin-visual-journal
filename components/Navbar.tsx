@@ -9,7 +9,7 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-30 border-b border-line/80 bg-paper/90 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-line/80 bg-paper/95">
       <nav className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
         <Link
           href="/"

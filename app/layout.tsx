@@ -5,8 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Kevin Visual Journal",
-  description:
-    "Kevin 影像日志，按地区、城市和路线归档旅途、山径、街巷与到达之地。",
+  description: "Kevin 影像日志，记录走过的路与到达的地方。",
 };
 
 export default function RootLayout({
