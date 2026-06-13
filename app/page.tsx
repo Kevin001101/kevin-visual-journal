@@ -18,8 +18,11 @@ export default function Home() {
         <div className="home-cover-shade" />
 
         <div className="home-cover-content">
-          <h1>Kevin Visual Journal</h1>
-          <p className="home-cover-subtitle">记录走过的路与到达的地方。</p>
+          <h1>
+            Kevin 影像日
+            <br />
+            志
+          </h1>
           <Link href="/galleries" className="home-primary-link">
             进入影像目录
           </Link>

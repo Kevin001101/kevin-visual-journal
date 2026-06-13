@@ -72,8 +72,8 @@ a {
 
 .home-cover-shade {
   background:
-    linear-gradient(rgba(31, 31, 31, 0.18), rgba(31, 31, 31, 0.42)),
-    linear-gradient(180deg, rgba(31, 31, 31, 0.12), rgba(31, 31, 31, 0.56));
+    linear-gradient(rgba(31, 31, 31, 0.02), rgba(31, 31, 31, 0.14)),
+    linear-gradient(180deg, rgba(31, 31, 31, 0), rgba(31, 31, 31, 0.18));
 }
 
 .home-cover-top {
@@ -128,9 +128,11 @@ a {
 .home-cover-content {
   position: relative;
   z-index: 1;
-  align-self: flex-end;
+  align-self: center;
   width: min(1100px, 100%);
-  padding: 0 clamp(20px, 4vw, 56px) clamp(70px, 11vh, 128px);
+  margin: 0 auto;
+  padding: clamp(52px, 8vh, 96px) clamp(20px, 4vw, 56px) 0;
+  text-align: center;
 }
 
 .home-cover-kicker {
@@ -142,13 +144,13 @@ a {
 }
 
 .home-cover-content h1 {
-  margin: 0;
-  max-width: 920px;
+  margin: 0 auto;
+  max-width: 1120px;
   color: #f4f0e8;
   font-family: var(--font-cormorant);
-  font-size: clamp(58px, 10vw, 148px);
+  font-size: clamp(64px, 10.5vw, 154px);
   font-weight: 500;
-  line-height: 0.9;
+  line-height: 0.82;
 }
 
 .home-cover-subtitle {
@@ -161,7 +163,7 @@ a {
 
 .home-primary-link {
   display: inline-flex;
-  margin-top: 30px;
+  margin-top: clamp(42px, 7vh, 76px);
   border-bottom: 1px solid rgba(244, 240, 232, 0.82);
   padding-bottom: 6px;
   color: #f4f0e8;

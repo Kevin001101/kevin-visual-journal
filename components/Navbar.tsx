@@ -15,10 +15,7 @@ export default function Navbar() {
           href="/"
           className="w-fit text-sm font-medium uppercase tracking-[0.24em] text-ink"
         >
-          Kevin Visual Journal
-          <span className="mt-1 block text-[11px] normal-case tracking-[0.16em] text-muted">
-            Kevin 影像日志
-          </span>
+          KEVIN 影像日志
         </Link>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[12px] uppercase tracking-[0.18em] text-muted">
           {navItems.map((item) => (
