@@ -147,7 +147,7 @@ a {
   padding: clamp(52px, 8vh, 96px) clamp(20px, 4vw, 56px) 0;
   text-align: center;
   opacity: calc(1 - (var(--home-progress) * 1.12));
-  transform: translate3d(0, calc(var(--home-progress) * -34px), 0);
+  transform: translate3d(0, calc(clamp(42px, 6vh, 76px) - (var(--home-progress) * 34px)), 0);
   will-change: opacity, transform;
 }
 
