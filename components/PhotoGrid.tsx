@@ -74,24 +74,25 @@ export default function PhotoGrid({
 
   return (
     <>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
         {visibleImages.map((image, index) => (
           <figure
             key={`${image.thumb}-${index}`}
-            className="relative aspect-[4/3] overflow-hidden bg-fog"
+            className="mb-4 break-inside-avoid overflow-hidden bg-fog"
           >
             <button
               type="button"
               aria-label={`Open ${image.alt}`}
-              className="absolute inset-0 cursor-zoom-in"
+              className="block w-full cursor-zoom-in"
               onClick={() => setActiveIndex(index)}
             >
               <Image
                 src={image.thumb}
                 alt={image.alt}
-                fill
+                width={image.width}
+                height={image.height}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-200 hover:scale-[1.02]"
+                className="h-auto w-full transition-transform duration-200 hover:scale-[1.02]"
               />
             </button>
           </figure>
@@ -178,8 +179,8 @@ export default function PhotoGrid({
             <Image
               src={activeImage.src}
               alt={activeImage.alt}
-              width={1600}
-              height={1067}
+              width={activeImage.width}
+              height={activeImage.height}
               sizes="100vw"
               className="block h-auto max-h-[calc(100vh-220px)] w-auto max-w-[calc(100vw-64px)] object-contain sm:max-h-[calc(100vh-240px)] sm:max-w-[calc(100vw-180px)]"
             />
