@@ -19,9 +19,9 @@ export default function Home() {
 
         <div className="home-cover-content">
           <h1>
-            Kevin 影像日
+            Kevin
             <br />
-            志
+            Journal
           </h1>
           <Link href="/galleries" className="home-primary-link">
             进入影像目录
