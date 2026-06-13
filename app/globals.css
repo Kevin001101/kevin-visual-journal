@@ -76,9 +76,8 @@ a {
 
 .home-cover-image {
   object-fit: cover;
-  transform: translate3d(0, calc(var(--home-progress) * -18px), 0) scale(1.02);
+  transform: scale(1.02);
   transform-origin: center;
-  will-change: transform;
 }
 
 .home-cover-shade {
