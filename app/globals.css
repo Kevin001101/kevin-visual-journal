@@ -48,12 +48,20 @@ a {
   min-height: 100vh;
 }
 
+.home-scroll-transition {
+  --home-progress: 0;
+  position: relative;
+  background: transparent;
+}
+
 .home-flow-section {
   min-height: auto;
 }
 
 .home-cover {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   min-height: clamp(680px, 88vh, 920px);
   overflow: hidden;
@@ -68,12 +76,17 @@ a {
 
 .home-cover-image {
   object-fit: cover;
+  transform: translate3d(0, calc(var(--home-progress) * -18px), 0) scale(1.02);
+  transform-origin: center;
+  will-change: transform;
 }
 
 .home-cover-shade {
   background:
-    linear-gradient(rgba(31, 31, 31, 0.02), rgba(31, 31, 31, 0.14)),
-    linear-gradient(180deg, rgba(31, 31, 31, 0), rgba(31, 31, 31, 0.18));
+    linear-gradient(rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.08)),
+    linear-gradient(180deg, rgba(31, 31, 31, 0), rgba(31, 31, 31, 0.16));
+  backdrop-filter: saturate(1.02);
+  opacity: calc(1 - (var(--home-progress) * 0.25));
 }
 
 .home-cover-top {
@@ -133,6 +146,9 @@ a {
   margin: 0 auto;
   padding: clamp(52px, 8vh, 96px) clamp(20px, 4vw, 56px) 0;
   text-align: center;
+  opacity: calc(1 - (var(--home-progress) * 1.12));
+  transform: translate3d(0, calc(var(--home-progress) * -34px), 0);
+  will-change: opacity, transform;
 }
 
 .home-cover-kicker {
@@ -176,6 +192,14 @@ a {
 .home-primary-link:hover {
   border-color: #caa77f;
   color: #caa77f;
+}
+
+.home-gallery-reveal {
+  position: relative;
+  z-index: 3;
+  background: rgba(244, 240, 232, 0.08);
+  backdrop-filter: blur(10px) saturate(1.04);
+  -webkit-backdrop-filter: blur(10px) saturate(1.04);
 }
 
 .home-scroll-cue {
