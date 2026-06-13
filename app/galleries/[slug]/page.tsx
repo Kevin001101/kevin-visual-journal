@@ -24,12 +24,12 @@ export async function generateMetadata({
 
   if (!gallery) {
     return {
-      title: "Gallery not found / Kevin Visual Journal",
+      title: "未找到相册 / Kevin 影像日志",
     };
   }
 
   return {
-    title: `${gallery.title} / Kevin Visual Journal`,
+    title: `${gallery.title} / Kevin 影像日志`,
     description: gallery.description,
   };
 }
@@ -51,13 +51,16 @@ export default async function GalleryDetailPage({ params }: GalleryPageProps) {
         <h1 className="font-serif text-6xl leading-none text-ink sm:text-8xl">
           {gallery.title}
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-7 text-muted">
-          {gallery.description}
-        </p>
       </div>
 
       <div className="mt-14">
-        <PhotoGrid images={gallery.images} title={gallery.title} />
+        <PhotoGrid
+          images={gallery.images}
+          title={gallery.title}
+          region={gallery.region}
+          category={gallery.category}
+          date={gallery.date}
+        />
       </div>
 
       <div className="mt-16 border-t border-line pt-8">

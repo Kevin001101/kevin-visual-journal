@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/galleries", label: "Galleries" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "首页" },
+  { href: "/galleries", label: "影像" },
+  { href: "/about", label: "关于" },
+  { href: "/contact", label: "联系" },
 ];
 
 export default function Navbar() {

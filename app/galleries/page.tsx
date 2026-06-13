@@ -8,7 +8,7 @@ export default function GalleriesPage() {
     <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 md:py-24 lg:px-10">
       <div className="mb-14 border-b border-line pb-8">
         <p className="text-xs uppercase tracking-[0.28em] text-accent">
-          Galleries
+          影像
         </p>
         <h1 className="mt-4 font-serif text-6xl leading-none text-ink sm:text-8xl">
           影像目录
@@ -36,9 +36,6 @@ export default function GalleriesPage() {
                   <h3 className="mt-3 font-serif text-3xl text-ink transition group-hover:text-accent">
                     {gallery.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-muted">
-                    {gallery.description}
-                  </p>
                 </Link>
               ))}
             </div>
