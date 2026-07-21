@@ -1,3 +1,5 @@
+import { photoMetadata, type PhotoMetadata } from "./photo-metadata";
+
 export type Gallery = {
   title: string;
   slug: string;
@@ -15,6 +17,7 @@ export type GalleryImage = {
   alt: string;
   width: number;
   height: number;
+  metadata: PhotoMetadata;
 };
 
 // Put full-size images in public/photos/{gallery}/ and thumbnails in
@@ -342,6 +345,7 @@ const galleryPhotos = (photos: string[], title: string): GalleryImage[] =>
     alt: `${title} photo ${String(index + 1).padStart(2, "0")}`,
     ...(imageDimensions[src] ??
       imageDimensions[getOriginalSrc(src)] ?? { width: 1600, height: 1067 }),
+    metadata: photoMetadata[src] ?? { rows: ["NO DATA"] },
   }));
 
 export type GalleryWallItem = {

@@ -27,6 +27,7 @@ export default function PhotoGrid({
   const visibleImages = images.slice(0, visibleCount);
   const canLoadMore = visibleCount < images.length;
   const metaText = [region, category, date].filter(Boolean).join(", ");
+  const activeMetadata = activeImage?.metadata.rows ?? ["NO DATA"];
 
   useEffect(() => {
     if (activeIndex === null) {
@@ -119,7 +120,7 @@ export default function PhotoGrid({
         <div
           aria-modal="true"
           aria-label={`${title} image viewer`}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black px-3 py-3 sm:px-6 sm:py-6"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black px-3 py-3 sm:px-6 sm:py-6 lg:pr-60"
           role="dialog"
           onClick={() => setActiveIndex(null)}
         >
@@ -139,7 +140,7 @@ export default function PhotoGrid({
               <button
                 type="button"
                 aria-label="Next image"
-                className="absolute right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-black/45 text-4xl leading-none text-white transition hover:bg-white hover:text-black sm:right-6 sm:h-14 sm:w-14"
+                className="absolute right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-black/45 text-4xl leading-none text-white transition hover:bg-white hover:text-black sm:right-6 sm:h-14 sm:w-14 lg:right-48"
                 onClick={(event) => {
                   event.stopPropagation();
                   showNext();
@@ -168,9 +169,21 @@ export default function PhotoGrid({
               width={activeImage.width}
               height={activeImage.height}
               sizes="100vw"
-              className="block h-auto max-h-[calc(100svh-24px)] w-auto max-w-[calc(100vw-24px)] object-contain sm:max-h-[calc(100svh-48px)] sm:max-w-[calc(100vw-48px)]"
+              className="block h-auto max-h-[calc(100svh-24px)] w-auto max-w-[calc(100vw-24px)] object-contain sm:max-h-[calc(100svh-48px)] sm:max-w-[calc(100vw-48px)] lg:max-w-[calc(100vw-300px)]"
               onClick={(event) => event.stopPropagation()}
             />
+
+            <aside
+              aria-label="Photo parameters"
+              className="absolute bottom-24 right-0 z-10 max-w-[calc(100vw-32px)] bg-black/45 px-4 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70 backdrop-blur-sm sm:text-xs lg:bottom-auto lg:right-[-13.5rem] lg:top-24 lg:flex lg:h-[calc(100svh-12rem)] lg:w-44 lg:max-w-none lg:flex-col lg:items-end lg:justify-center lg:bg-transparent lg:px-0 lg:py-0 lg:text-right lg:tracking-[0.22em]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 lg:flex-col lg:gap-3">
+                {activeMetadata.map((item, itemIndex) => (
+                  <span key={`${item}-${itemIndex}`}>{item}</span>
+                ))}
+              </div>
+            </aside>
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-4 pb-4 text-center text-white sm:pb-6">
               <div className="bg-black/45 px-4 py-3 backdrop-blur-sm">
