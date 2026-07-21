@@ -13,7 +13,7 @@ export default function Home() {
             src={homeHeroImage}
             alt=""
             fill
-            priority
+            preload
             sizes="100vw"
             className="home-cover-image"
           />

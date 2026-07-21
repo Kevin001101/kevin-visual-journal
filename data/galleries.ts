@@ -30,6 +30,17 @@ const getThumbnailSrc = (src: string) => {
   return `${src.slice(0, lastSlashIndex)}/thumbs${src.slice(lastSlashIndex)}`;
 };
 
+const getOriginalSrc = (src: string) => {
+  if (!src.includes("/optimized/")) {
+    return src;
+  }
+
+  return src
+    .replace("/photos/optimized/", "/photos/")
+    .replace("/detail/", "/")
+    .replace("/wall/", "/");
+};
+
 const imageDimensions: Record<string, { width: number; height: number }> = {
   "/photos/bronze-head/bronze-head-01.jpg": { width: 960, height: 1280 },
   "/photos/bronze-head/bronze-head-02.jpg": { width: 1705, height: 1280 },
@@ -329,7 +340,8 @@ const galleryPhotos = (photos: string[], title: string): GalleryImage[] =>
     src,
     thumb: getThumbnailSrc(src),
     alt: `${title} photo ${String(index + 1).padStart(2, "0")}`,
-    ...(imageDimensions[src] ?? { width: 1600, height: 1067 }),
+    ...(imageDimensions[src] ??
+      imageDimensions[getOriginalSrc(src)] ?? { width: 1600, height: 1067 }),
   }));
 
 export type GalleryWallItem = {
@@ -347,7 +359,7 @@ export const regionOrder = [
 ];
 
 export const homeHeroImage =
-  "/photos/covers/home-hero-kula-kangri.jpg";
+  "/photos/optimized/covers/home-hero-kula-kangri.jpg";
 
 const wallPhotos = [
   "/photos/optimized/macau-fireworks/wall/DSC01615.jpg",
@@ -423,78 +435,78 @@ const mountSiguniangDetailPhotos = [
 ];
 
 const mountWutaiPhotos = [
-  "/photos/mount-wutai/wutai-01.jpg",
-  "/photos/mount-wutai/wutai-02.jpg",
-  "/photos/mount-wutai/wutai-03.jpg",
-  "/photos/mount-wutai/wutai-04.jpg",
-  "/photos/mount-wutai/wutai-05.jpg",
-  "/photos/mount-wutai/wutai-06.jpg",
-  "/photos/mount-wutai/wutai-07.jpg",
-  "/photos/mount-wutai/wutai-08.jpg",
-  "/photos/mount-wutai/wutai-09.jpg",
-  "/photos/mount-wutai/wutai-10.jpg",
-  "/photos/mount-wutai/wutai-11.jpg",
-  "/photos/mount-wutai/wutai-12.jpg",
-  "/photos/mount-wutai/wutai-13.jpg",
-  "/photos/mount-wutai/wutai-14.jpg",
-  "/photos/mount-wutai/wutai-15.jpg",
-  "/photos/mount-wutai/wutai-16.jpg",
-  "/photos/mount-wutai/wutai-17.jpg",
-  "/photos/mount-wutai/wutai-18.jpg",
-  "/photos/mount-wutai/wutai-19.jpg",
-  "/photos/mount-wutai/wutai-20.jpg",
-  "/photos/mount-wutai/wutai-21.jpg",
-  "/photos/mount-wutai/wutai-22.jpg",
-  "/photos/mount-wutai/wutai-23.jpg",
-  "/photos/mount-wutai/wutai-24.jpg",
-  "/photos/mount-wutai/wutai-25.jpg",
-  "/photos/mount-wutai/wutai-26.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-01.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-02.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-03.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-04.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-05.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-06.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-07.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-08.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-09.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-10.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-11.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-12.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-13.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-14.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-15.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-16.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-17.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-18.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-19.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-20.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-21.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-22.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-23.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-24.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-25.jpg",
+  "/photos/optimized/mount-wutai/detail/wutai-26.jpg",
 ];
 
 const mountWutaiCover = mountWutaiPhotos[7];
-const kulaKangriCover = "/photos/covers/kula-kangri-cover.jpg";
-const mountSiguniangCover = "/photos/covers/mount-siguniang-cover.jpg";
+const kulaKangriCover = "/photos/optimized/covers/kula-kangri-cover.jpg";
+const mountSiguniangCover = "/photos/optimized/covers/mount-siguniang-cover.jpg";
 const changbaiMountainPhotos = [
-  "/photos/changbai-mountain/changbai-01.jpg",
-  "/photos/changbai-mountain/changbai-02.jpg",
-  "/photos/changbai-mountain/changbai-03.jpg",
-  "/photos/changbai-mountain/changbai-04.jpg",
-  "/photos/changbai-mountain/changbai-05.jpg",
-  "/photos/changbai-mountain/changbai-06.jpg",
-  "/photos/changbai-mountain/changbai-07.jpg",
-  "/photos/changbai-mountain/changbai-08.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-01.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-02.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-03.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-04.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-05.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-06.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-07.jpg",
+  "/photos/optimized/changbai-mountain/detail/changbai-08.jpg",
 ];
 const changbaiMountainCover = changbaiMountainPhotos[7];
 const lhasaPhotos = [
-  "/photos/lhasa/lhasa-01.jpg",
-  "/photos/lhasa/lhasa-02.jpg",
-  "/photos/lhasa/lhasa-03.jpg",
-  "/photos/lhasa/lhasa-04.jpg",
-  "/photos/lhasa/lhasa-05.jpg",
-  "/photos/lhasa/lhasa-06.jpg",
-  "/photos/lhasa/lhasa-07.jpg",
-  "/photos/lhasa/lhasa-08.jpg",
-  "/photos/lhasa/lhasa-09.jpg",
-  "/photos/lhasa/lhasa-phone-01.jpg",
-  "/photos/lhasa/lhasa-phone-02.jpg",
-  "/photos/lhasa/lhasa-phone-03.jpg",
-  "/photos/lhasa/lhasa-phone-04.jpg",
-  "/photos/lhasa/lhasa-phone-05.jpg",
-  "/photos/lhasa/lhasa-phone-06.jpg",
-  "/photos/lhasa/lhasa-phone-07.jpg",
-  "/photos/lhasa/lhasa-phone-08.jpg",
-  "/photos/lhasa/lhasa-phone-09.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-01.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-02.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-03.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-04.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-05.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-06.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-07.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-08.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-09.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-01.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-02.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-03.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-04.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-05.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-06.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-07.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-08.jpg",
+  "/photos/optimized/lhasa/detail/lhasa-phone-09.jpg",
 ];
 const lhasaCover = lhasaPhotos[2];
 const hongKongPhotos = [
-  "/photos/hong-kong/hong-kong-01.jpg",
-  "/photos/hong-kong/hong-kong-02.jpg",
-  "/photos/hong-kong/hong-kong-03.jpg",
-  "/photos/hong-kong/hong-kong-04.jpg",
-  "/photos/hong-kong/hong-kong-05.jpg",
-  "/photos/hong-kong/hong-kong-06.jpg",
-  "/photos/hong-kong/hong-kong-07.jpg",
-  "/photos/hong-kong/hong-kong-08.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-01.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-02.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-03.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-04.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-05.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-06.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-07.jpg",
+  "/photos/optimized/hong-kong/detail/hong-kong-08.jpg",
 ];
 const hongKongCover = hongKongPhotos[6];
 const wuhanPhotos = [
@@ -667,17 +679,17 @@ const wugongshanPhotos = [
 ];
 const wugongshanCover = "/photos/optimized/wugongshan/wall/wugongshan-01.jpg";
 const macauPhotos = [
-  "/photos/macau/macau-01.jpg",
-  "/photos/macau/macau-02.jpg",
-  "/photos/macau/macau-03.jpg",
-  "/photos/macau/macau-04.jpg",
-  "/photos/macau/macau-05.jpg",
-  "/photos/macau/macau-06.jpg",
-  "/photos/macau/macau-07.jpg",
-  "/photos/macau/macau-08.jpg",
-  "/photos/macau/macau-09.jpg",
-  "/photos/macau/macau-10.jpg",
-  "/photos/macau/macau-11.jpg",
+  "/photos/optimized/macau/detail/macau-01.jpg",
+  "/photos/optimized/macau/detail/macau-02.jpg",
+  "/photos/optimized/macau/detail/macau-03.jpg",
+  "/photos/optimized/macau/detail/macau-04.jpg",
+  "/photos/optimized/macau/detail/macau-05.jpg",
+  "/photos/optimized/macau/detail/macau-06.jpg",
+  "/photos/optimized/macau/detail/macau-07.jpg",
+  "/photos/optimized/macau/detail/macau-08.jpg",
+  "/photos/optimized/macau/detail/macau-09.jpg",
+  "/photos/optimized/macau/detail/macau-10.jpg",
+  "/photos/optimized/macau/detail/macau-11.jpg",
 ];
 const macauCover = macauPhotos[8];
 const bronzeHeadPhotos = [
