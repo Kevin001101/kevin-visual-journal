@@ -693,11 +693,11 @@ const macauPhotos = [
 ];
 const macauCover = macauPhotos[8];
 const bronzeHeadPhotos = [
-  "/photos/bronze-head/bronze-head-01.jpg",
-  "/photos/bronze-head/bronze-head-02.jpg",
-  "/photos/bronze-head/bronze-head-03.jpg",
-  "/photos/bronze-head/bronze-head-04.jpg",
-  "/photos/bronze-head/bronze-head-05.jpg",
+  "/photos/optimized/bronze-head/detail/bronze-head-01.jpg",
+  "/photos/optimized/bronze-head/detail/bronze-head-02.jpg",
+  "/photos/optimized/bronze-head/detail/bronze-head-03.jpg",
+  "/photos/optimized/bronze-head/detail/bronze-head-04.jpg",
+  "/photos/optimized/bronze-head/detail/bronze-head-05.jpg",
 ];
 const bronzeHeadCover = bronzeHeadPhotos[3];
 

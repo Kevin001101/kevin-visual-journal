@@ -10,6 +10,7 @@ const legacyGalleries = [
   "mount-wutai",
   "changbai-mountain",
   "lhasa",
+  "bronze-head",
 ];
 
 const outputProfiles = [
