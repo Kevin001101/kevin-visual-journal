@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
+import { exiftool } from "exiftool-vendored";
 
 const root = process.cwd();
 const galleriesPath = path.join(root, "data", "galleries.ts");
@@ -61,7 +62,52 @@ const TAGS = {
 const formatDecimal = (value, digits = 1) =>
   Number(value).toFixed(digits).replace(/\.0$/, "");
 
+const compactString = (value) => {
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+
+  const stringValue = String(value).trim();
+  return stringValue || undefined;
+};
+
+const firstValue = (...values) =>
+  values.map(compactString).find((value) => value !== undefined);
+
+const parseNumber = (value) => {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value !== "string") {
+    return undefined;
+  }
+
+  const match = value.match(/-?\d+(?:\.\d+)?/);
+  return match ? Number(match[0]) : undefined;
+};
+
 const formatExposure = (value) => {
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (!trimmed) {
+      return undefined;
+    }
+
+    const fraction = trimmed.match(/^(\d+)\s*\/\s*(\d+)/);
+    if (fraction) {
+      return `${fraction[1]}/${fraction[2]}s`;
+    }
+
+    const seconds = trimmed.match(/^(\d+(?:\.\d+)?)\s*s(?:ec(?:onds?)?)?$/i);
+    if (seconds) {
+      return `${formatDecimal(Number(seconds[1]))}s`;
+    }
+
+    const numericValue = parseNumber(trimmed);
+    return numericValue ? formatExposure(numericValue) : trimmed;
+  }
+
   if (!value || !Number.isFinite(value)) {
     return undefined;
   }
@@ -70,8 +116,19 @@ const formatExposure = (value) => {
 };
 
 const formatDate = (value) => {
-  if (!value || typeof value !== "string") {
+  if (!value) {
     return undefined;
+  }
+
+  if (typeof value === "object") {
+    const { year, month, day, hour, minute } = value;
+    if ([year, month, day, hour, minute].every((part) => Number.isFinite(part))) {
+      return `${year}.${String(month).padStart(2, "0")}.${String(day).padStart(2, "0")} ${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+    }
+  }
+
+  if (typeof value !== "string") {
+    return compactString(value);
   }
 
   const match = value.match(/^(\d{4}):(\d{2}):(\d{2})\s+(\d{2}):(\d{2})/);
@@ -377,6 +434,30 @@ function buildRows(metadata, width, height) {
   return rows.filter(Boolean);
 }
 
+const normalizeExifToolTags = (tags) => ({
+  Make: firstValue(tags.Make),
+  Model: firstValue(tags.Model),
+  DateTime: tags.DateTime ?? tags.ModifyDate,
+  DateTimeOriginal: tags.DateTimeOriginal ?? tags.CreateDate,
+  ExposureTime: tags.ExposureTime ?? tags.ShutterSpeed,
+  FNumber: parseNumber(tags.FNumber ?? tags.Aperture),
+  ISO: parseNumber(Array.isArray(tags.ISO) ? tags.ISO[0] : tags.ISO),
+  FocalLength: parseNumber(tags.FocalLength),
+  FocalLength35mm: parseNumber(tags.FocalLengthIn35mmFormat),
+  LensModel: firstValue(tags.LensModel, tags.LensID, tags.Lens),
+});
+
+async function readExifToolImageMetadata(filePath) {
+  const imageMetadata = await sharp(filePath).metadata();
+  const tags = await exiftool.read(filePath);
+  const metadata = normalizeExifToolTags(tags);
+  return {
+    imageMetadata,
+    metadata,
+    score: metadataScore(metadata, imageMetadata) + 500000,
+  };
+}
+
 async function readImageMetadata(filePath) {
   const imageMetadata = await sharp(filePath).metadata();
   const metadata = imageMetadata.exif ? parseExif(imageMetadata.exif) : {};
@@ -468,12 +549,19 @@ async function getMetadata(src, confirmedMapping, externalImages, groupImages, f
 
   for (const filePath of candidates) {
     try {
-      const candidate = await readImageMetadata(filePath);
+      const candidate = await readExifToolImageMetadata(filePath);
       if (!best || candidate.score > best.score) {
         best = candidate;
       }
     } catch {
-      continue;
+      try {
+        const candidate = await readImageMetadata(filePath);
+        if (!best || candidate.score > best.score) {
+          best = candidate;
+        }
+      } catch {
+        continue;
+      }
     }
   }
 
@@ -555,6 +643,7 @@ export const photoMetadata: Record<string, PhotoMetadata> = ${JSON.stringify(
 `;
 
 await fs.writeFile(outputPath, file);
+await exiftool.end();
 console.log(
   `Generated metadata for ${imagePaths.length} images (${withExif} with EXIF, ${confirmedMapping.size} mapped originals).`,
 );
