@@ -105,11 +105,7 @@ export default function PhotoGrid({
           <button
             type="button"
             className="border border-line px-6 py-3 text-xs uppercase tracking-[0.22em] text-ink transition hover:border-accent hover:text-accent"
-            onClick={() =>
-              setVisibleCount((current) =>
-                Math.min(current + PHOTOS_PER_BATCH, images.length),
-              )
-            }
+            onClick={() => setVisibleCount(images.length)}
           >
             加载更多
           </button>
