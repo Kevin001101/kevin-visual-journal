@@ -118,7 +118,8 @@ export default function PhotoGrid({
       {activeImage && (
         <div
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 py-5 sm:px-8"
+          aria-label={`${title} image viewer`}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black px-3 py-3 sm:px-6 sm:py-6"
           role="dialog"
           onClick={() => setActiveIndex(null)}
         >
@@ -127,7 +128,7 @@ export default function PhotoGrid({
               <button
                 type="button"
                 aria-label="Previous image"
-                className="absolute left-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-black/25 text-4xl leading-none text-white transition hover:bg-white hover:text-black sm:left-8"
+                className="absolute left-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-black/45 text-4xl leading-none text-white transition hover:bg-white hover:text-black sm:left-6 sm:h-14 sm:w-14"
                 onClick={(event) => {
                   event.stopPropagation();
                   showPrevious();
@@ -138,7 +139,7 @@ export default function PhotoGrid({
               <button
                 type="button"
                 aria-label="Next image"
-                className="absolute right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-black/25 text-4xl leading-none text-white transition hover:bg-white hover:text-black sm:right-8"
+                className="absolute right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-black/45 text-4xl leading-none text-white transition hover:bg-white hover:text-black sm:right-6 sm:h-14 sm:w-14"
                 onClick={(event) => {
                   event.stopPropagation();
                   showNext();
@@ -150,31 +151,16 @@ export default function PhotoGrid({
           )}
 
           <div
-            className="relative inline-flex max-h-[calc(100vh-40px)] max-w-[calc(100vw-32px)] flex-col overflow-hidden bg-white p-4 shadow-2xl sm:max-w-[calc(100vw-120px)] sm:p-7"
-            onClick={(event) => event.stopPropagation()}
+            className="relative flex h-full w-full items-center justify-center"
           >
             <button
               type="button"
               aria-label="Close image"
-              className="absolute right-0 top-0 z-20 flex h-14 w-14 items-center justify-center bg-neutral-300 text-4xl font-light leading-none text-white transition hover:bg-neutral-800"
+              className="absolute right-0 top-0 z-20 flex h-12 w-12 items-center justify-center bg-black/45 text-3xl font-light leading-none text-white transition hover:bg-white hover:text-black sm:h-14 sm:w-14"
               onClick={() => setActiveIndex(null)}
             >
               x
             </button>
-
-            <header className="shrink-0 px-12 pb-5 text-center text-ink sm:pb-7">
-              {metaText && (
-                <p className="font-serif text-lg font-semibold italic leading-none sm:text-2xl">
-                  {metaText}
-                </p>
-              )}
-              <h2 className="mt-1 text-3xl font-black leading-none sm:text-5xl">
-                {title}
-              </h2>
-              <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted">
-                {(activeIndex ?? 0) + 1} / {images.length}
-              </p>
-            </header>
 
             <Image
               src={activeImage.src}
@@ -182,8 +168,22 @@ export default function PhotoGrid({
               width={activeImage.width}
               height={activeImage.height}
               sizes="100vw"
-              className="block h-auto max-h-[calc(100vh-220px)] w-auto max-w-[calc(100vw-64px)] object-contain sm:max-h-[calc(100vh-240px)] sm:max-w-[calc(100vw-180px)]"
+              className="block h-auto max-h-[calc(100svh-24px)] w-auto max-w-[calc(100vw-24px)] object-contain sm:max-h-[calc(100svh-48px)] sm:max-w-[calc(100vw-48px)]"
+              onClick={(event) => event.stopPropagation()}
             />
+
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-4 pb-4 text-center text-white sm:pb-6">
+              <div className="bg-black/45 px-4 py-3 backdrop-blur-sm">
+                {metaText && (
+                  <p className="font-serif text-sm font-semibold italic leading-none sm:text-lg">
+                    {metaText}
+                  </p>
+                )}
+                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/70">
+                  {title} / {(activeIndex ?? 0) + 1} / {images.length}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       )}
