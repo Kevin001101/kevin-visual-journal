@@ -11,50 +11,154 @@ export type PhotoMetadata = {
 
 export const photoMetadata: Record<string, PhotoMetadata> = {
   "/photos/optimized/birding/detail/birding-01.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F5.6",
+    "shutter": "1/250s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 15:04",
     "rows": [
-      "NO EXIF",
-      "3072 x 4608"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F5.6",
+      "1/250s",
+      "200MM",
+      "2026.04.26 15:04",
+      "4608 x 3072"
     ]
   },
   "/photos/optimized/birding/detail/birding-02.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F5.6",
+    "shutter": "1/250s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 15:05",
     "rows": [
-      "NO EXIF",
-      "3072 x 4608"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F5.6",
+      "1/250s",
+      "200MM",
+      "2026.04.26 15:05",
+      "4608 x 3072"
     ]
   },
   "/photos/optimized/birding/detail/birding-03.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F5.6",
+    "shutter": "1/320s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 15:04",
     "rows": [
-      "NO EXIF",
-      "2711 x 1764"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F5.6",
+      "1/320s",
+      "200MM",
+      "2026.04.26 15:04",
+      "4608 x 3072"
     ]
   },
   "/photos/optimized/birding/detail/birding-04.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "500",
+    "aperture": "F5.6",
+    "shutter": "1/320s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 16:58",
     "rows": [
-      "NO EXIF",
-      "2333 x 1704"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 500",
+      "F5.6",
+      "1/320s",
+      "200MM",
+      "2026.04.26 16:58",
+      "4608 x 3072"
     ]
   },
   "/photos/optimized/birding/detail/birding-05.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "640",
+    "aperture": "F5.6",
+    "shutter": "1/4000s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 17:13",
     "rows": [
-      "NO EXIF",
-      "1599 x 1159"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 640",
+      "F5.6",
+      "1/4000s",
+      "200MM",
+      "2026.04.26 17:13",
+      "4608 x 3072"
     ]
   },
   "/photos/optimized/birding/detail/birding-06.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F5.6",
+    "shutter": "1/250s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 17:24",
     "rows": [
-      "NO EXIF",
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F5.6",
+      "1/250s",
+      "200MM",
+      "2026.04.26 17:24",
       "4608 x 3072"
     ]
   },
   "/photos/optimized/birding/detail/birding-07.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "640",
+    "aperture": "F5.6",
+    "shutter": "1/250s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 17:23",
     "rows": [
-      "NO EXIF",
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 640",
+      "F5.6",
+      "1/250s",
+      "200MM",
+      "2026.04.26 17:23",
       "4608 x 3072"
     ]
   },
   "/photos/optimized/birding/detail/birding-08.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F5.6",
+    "shutter": "1/320s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.26 17:24",
     "rows": [
-      "NO EXIF",
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F5.6",
+      "1/320s",
+      "200MM",
+      "2026.04.26 17:24",
       "4608 x 3072"
     ]
   },
