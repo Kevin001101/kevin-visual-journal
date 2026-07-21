@@ -89,51 +89,103 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-01.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/160s",
+    "focalLength": "200MM",
+    "capturedAt": "2025.11.23 12:09",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/160s",
+      "200MM",
+      "2025.11.23 12:09",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-02.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "125",
+    "aperture": "F5.6",
+    "shutter": "1/2000s",
+    "focalLength": "200MM",
+    "capturedAt": "2025.11.24 12:15",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 125",
+      "F5.6",
+      "1/2000s",
+      "200MM",
+      "2025.11.24 12:15",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-03.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1467"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-04.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "125",
+    "aperture": "F9",
+    "shutter": "1/250s",
+    "focalLength": "28MM",
+    "capturedAt": "2025.11.24 12:46",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 125",
+      "F9",
+      "1/250s",
+      "28MM",
+      "2025.11.24 12:46",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-05.jpg": {
     "rows": [
       "NO EXIF",
-      "1467 x 2200"
+      "4672 x 7008"
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-06.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F9",
+    "shutter": "1/1000s",
+    "focalLength": "70MM",
+    "capturedAt": "2025.11.24 10:33",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F9",
+      "1/1000s",
+      "70MM",
+      "2025.11.24 10:33",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-07.jpg": {
     "rows": [
       "NO EXIF",
-      "1467 x 2200"
+      "4672 x 7008"
     ]
   },
   "/photos/optimized/changbai-mountain/detail/changbai-08.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1467"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/changsha/detail/changsha-01.jpg": {
@@ -193,109 +245,239 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
   "/photos/optimized/hong-kong/detail/hong-kong-01.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4672 x 6224"
     ]
   },
   "/photos/optimized/hong-kong/detail/hong-kong-02.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1651"
+      "6224 x 4672"
     ]
   },
   "/photos/optimized/hong-kong/detail/hong-kong-03.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1651"
+      "6224 x 4672"
     ]
   },
   "/photos/optimized/hong-kong/detail/hong-kong-04.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4672 x 6224"
     ]
   },
   "/photos/optimized/hong-kong/detail/hong-kong-05.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4516 x 6016"
     ]
   },
   "/photos/optimized/hong-kong/detail/hong-kong-06.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4672 x 6224"
     ]
   },
   "/photos/optimized/hong-kong/detail/hong-kong-07.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1420"
+      "6224 x 4017"
     ]
   },
   "/photos/optimized/hong-kong/detail/hong-kong-08.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1635"
+      "6224 x 4626"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC04510.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F7.1",
+    "shutter": "1/60s",
+    "focalLength": "65MM",
+    "capturedAt": "2026.01.26 09:25",
     "rows": [
-      "NO EXIF",
-      "1600 x 1067"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F7.1",
+      "1/60s",
+      "65MM",
+      "2026.01.26 09:25",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC04645.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "400",
+    "aperture": "F8",
+    "shutter": "1/1000s",
+    "focalLength": "45MM",
+    "capturedAt": "2026.01.26 13:15",
     "rows": [
-      "NO EXIF",
-      "1600 x 963"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 400",
+      "F8",
+      "1/1000s",
+      "45MM",
+      "2026.01.26 13:15",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05000.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F5.6",
+    "shutter": "1/800s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.01.27 09:00",
     "rows": [
-      "NO EXIF",
-      "1600 x 1067"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F5.6",
+      "1/800s",
+      "28MM",
+      "2026.01.27 09:00",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05107.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/640s",
+    "focalLength": "120MM",
+    "capturedAt": "2026.01.27 10:36",
     "rows": [
-      "NO EXIF",
-      "1600 x 2400"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/640s",
+      "120MM",
+      "2026.01.27 10:36",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05108.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/400s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.01.27 10:36",
     "rows": [
-      "NO EXIF",
-      "1600 x 1067"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/400s",
+      "200MM",
+      "2026.01.27 10:36",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05154-2.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F7.1",
+    "shutter": "1/640s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.01.27 11:55",
     "rows": [
-      "NO EXIF",
-      "1600 x 2400"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F7.1",
+      "1/640s",
+      "28MM",
+      "2026.01.27 11:55",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05307.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "200",
+    "aperture": "F9",
+    "shutter": "1/640s",
+    "focalLength": "40MM",
+    "capturedAt": "2026.01.29 14:24",
     "rows": [
-      "NO EXIF",
-      "1600 x 1067"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 200",
+      "F9",
+      "1/640s",
+      "40MM",
+      "2026.01.29 14:24",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05323.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "200",
+    "aperture": "F10",
+    "shutter": "1/160s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.01.29 15:16",
     "rows": [
-      "NO EXIF",
-      "1600 x 1066"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 200",
+      "F10",
+      "1/160s",
+      "200MM",
+      "2026.01.29 15:16",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05354.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "125",
+    "aperture": "F5.6",
+    "shutter": "1/640s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.01.29 15:35",
     "rows": [
-      "NO EXIF",
-      "1600 x 1086"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 125",
+      "F5.6",
+      "1/640s",
+      "200MM",
+      "2026.01.29 15:35",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/DSC05379.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/400s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.01.30 18:20",
     "rows": [
-      "NO EXIF",
-      "1600 x 1067"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/400s",
+      "28MM",
+      "2026.01.30 18:20",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/kula-kangri/detail/kula-kangri-phone-01.jpg": {
@@ -463,25 +645,38 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
   "/photos/optimized/lhasa/detail/lhasa-01.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1518"
+      "3640 x 2511"
     ]
   },
   "/photos/optimized/lhasa/detail/lhasa-02.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1408"
+      "6672 x 4270"
     ]
   },
   "/photos/optimized/lhasa/detail/lhasa-03.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F3.5",
+    "shutter": "1/800s",
+    "focalLength": "43MM",
+    "capturedAt": "2026.01.25 16:20",
     "rows": [
-      "NO EXIF",
-      "2200 x 1466"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F3.5",
+      "1/800s",
+      "43MM",
+      "2026.01.25 16:20",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/lhasa/detail/lhasa-04.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1467"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/lhasa/detail/lhasa-05.jpg": {
@@ -561,9 +756,22 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/lhasa/detail/lhasa-09.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F9",
+    "shutter": "1/80s",
+    "focalLength": "33MM",
+    "capturedAt": "2026.01.25 16:17",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F9",
+      "1/80s",
+      "33MM",
+      "2026.01.25 16:17",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/lhasa/detail/lhasa-phone-01.jpg": {
@@ -623,109 +831,135 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
   "/photos/optimized/macau-fireworks/detail/DSC01615.jpg": {
     "rows": [
       "NO EXIF",
-      "1600 x 2400"
+      "3072 x 4608"
     ]
   },
   "/photos/optimized/macau-fireworks/detail/DSC01625.jpg": {
     "rows": [
       "NO EXIF",
-      "1600 x 1067"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/macau-fireworks/detail/DSC01629.jpg": {
     "rows": [
       "NO EXIF",
-      "1600 x 1067"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/macau-fireworks/detail/DSC01644.jpg": {
     "rows": [
       "NO EXIF",
-      "1600 x 1067"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/macau-fireworks/detail/DSC01646.jpg": {
     "rows": [
       "NO EXIF",
-      "1600 x 1067"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/macau-fireworks/detail/DSC01647.jpg": {
     "rows": [
       "NO EXIF",
-      "1600 x 1067"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/macau-fireworks/detail/DSC01677.jpg": {
     "rows": [
       "NO EXIF",
-      "1600 x 1067"
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/macau/detail/macau-01.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F4",
+    "shutter": "1/60s",
+    "focalLength": "61MM",
+    "capturedAt": "2025.01.04 16:21",
     "rows": [
-      "NO EXIF",
-      "1651 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F4",
+      "1/60s",
+      "61MM",
+      "2025.01.04 16:21",
+      "6224 x 4672"
     ]
   },
   "/photos/optimized/macau/detail/macau-02.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "500",
+    "aperture": "F4.5",
+    "shutter": "1/80s",
+    "focalLength": "97MM",
+    "capturedAt": "2025.01.04 16:27",
     "rows": [
-      "NO EXIF",
-      "1651 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 500",
+      "F4.5",
+      "1/80s",
+      "97MM",
+      "2025.01.04 16:27",
+      "6224 x 4672"
     ]
   },
   "/photos/optimized/macau/detail/macau-03.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1651"
+      "6224 x 4672"
     ]
   },
   "/photos/optimized/macau/detail/macau-04.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4672 x 6224"
     ]
   },
   "/photos/optimized/macau/detail/macau-05.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4672 x 6224"
     ]
   },
   "/photos/optimized/macau/detail/macau-06.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4672 x 6224"
     ]
   },
   "/photos/optimized/macau/detail/macau-07.jpg": {
     "rows": [
       "NO EXIF",
-      "1476 x 2200"
+      "3692 x 5504"
     ]
   },
   "/photos/optimized/macau/detail/macau-08.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4507 x 6004"
     ]
   },
   "/photos/optimized/macau/detail/macau-09.jpg": {
     "rows": [
       "NO EXIF",
-      "1651 x 2200"
+      "4672 x 6224"
     ]
   },
   "/photos/optimized/macau/detail/macau-10.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1558"
+      "6144 x 4350"
     ]
   },
   "/photos/optimized/macau/detail/macau-11.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1416"
+      "6224 x 4005"
     ]
   },
   "/photos/optimized/maclehose-trail/detail/maclehose-trail-01.jpg": {
@@ -747,9 +981,16 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/maclehose-trail/detail/maclehose-trail-04.jpg": {
+    "iso": "20",
+    "aperture": "F2.2",
+    "shutter": "1/121s",
+    "focalLength": "2MM",
     "rows": [
-      "NO EXIF",
-      "2200 x 1650"
+      "ISO 20",
+      "F2.2",
+      "1/121s",
+      "2MM",
+      "8064 x 6048"
     ]
   },
   "/photos/optimized/maclehose-trail/detail/maclehose-trail-05.jpg": {
@@ -905,49 +1146,49 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
   "/photos/optimized/mount-wutai/detail/wutai-01.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-02.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-03.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-04.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-05.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-06.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-07.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-08.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-09.jpg": {
@@ -979,49 +1220,49 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
   "/photos/optimized/mount-wutai/detail/wutai-11.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-12.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-13.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-14.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-15.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "4032 x 3024"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-16.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "4032 x 3024"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-17.jpg": {
     "rows": [
       "NO EXIF",
-      "1650 x 2200"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-18.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-19.jpg": {
@@ -1040,43 +1281,43 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
   "/photos/optimized/mount-wutai/detail/wutai-20.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "4032 x 3024"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-21.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "4032 x 3024"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-22.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "4032 x 3024"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-23.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-24.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "4032 x 3024"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-25.jpg": {
     "rows": [
       "NO EXIF",
-      "2200 x 1650"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/mount-wutai/detail/wutai-26.jpg": {
     "rows": [
       "NO EXIF",
-      "1650 x 2200"
+      "5712 x 4284"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-01.jpg": {
@@ -1098,57 +1339,174 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-04.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "400",
+    "aperture": "F5",
+    "shutter": "1/500s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.01.01 13:12",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 400",
+      "F5",
+      "1/500s",
+      "28MM",
+      "2026.01.01 13:12",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-05.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "400",
+    "aperture": "F5",
+    "shutter": "1/200s",
+    "focalLength": "72MM",
+    "capturedAt": "2026.01.01 13:12",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 400",
+      "F5",
+      "1/200s",
+      "72MM",
+      "2026.01.01 13:12",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-06.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "1000",
+    "aperture": "F5.6",
+    "shutter": "1/25s",
+    "focalLength": "182MM",
+    "capturedAt": "2026.01.01 13:18",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 1000",
+      "F5.6",
+      "1/25s",
+      "182MM",
+      "2026.01.01 13:18",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-07.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "1000",
+    "aperture": "F5.6",
+    "shutter": "1/640s",
+    "focalLength": "52MM",
+    "capturedAt": "2026.01.01 13:24",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 1000",
+      "F5.6",
+      "1/640s",
+      "52MM",
+      "2026.01.01 13:24",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-08.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "200",
+    "aperture": "F5.6",
+    "shutter": "1/160s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.01.01 15:10",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 200",
+      "F5.6",
+      "1/160s",
+      "28MM",
+      "2026.01.01 15:10",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-09.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "200",
+    "aperture": "F5.6",
+    "shutter": "1/80s",
+    "focalLength": "47MM",
+    "capturedAt": "2026.01.01 15:11",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 200",
+      "F5.6",
+      "1/80s",
+      "47MM",
+      "2026.01.01 15:11",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-10.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "200",
+    "aperture": "F5.6",
+    "shutter": "1/100s",
+    "focalLength": "35MM",
+    "capturedAt": "2026.01.01 15:23",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 200",
+      "F5.6",
+      "1/100s",
+      "35MM",
+      "2026.01.01 15:23",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-11.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5",
+    "shutter": "1/250s",
+    "focalLength": "70MM",
+    "capturedAt": "2026.01.01 15:40",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5",
+      "1/250s",
+      "70MM",
+      "2026.01.01 15:40",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-12.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/125s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.01.01 16:05",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/125s",
+      "200MM",
+      "2026.01.01 16:05",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/nanchang/detail/nanchang-13.jpg": {
@@ -1194,15 +1552,41 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-01.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F2.8",
+    "shutter": "15s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.04.04 22:54",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F2.8",
+      "15s",
+      "28MM",
+      "2026.04.04 22:54",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-02.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5",
+    "shutter": "1/640s",
+    "focalLength": "34MM",
+    "capturedAt": "2026.04.05 08:28",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5",
+      "1/640s",
+      "34MM",
+      "2026.04.05 08:28",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-03.jpg": {
@@ -1212,15 +1596,41 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-04.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F9",
+    "shutter": "1/160s",
+    "focalLength": "92MM",
+    "capturedAt": "2026.04.05 09:11",
     "rows": [
-      "NO EXIF",
-      "1467 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F9",
+      "1/160s",
+      "92MM",
+      "2026.04.05 09:11",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-05.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/640s",
+    "focalLength": "50MM",
+    "capturedAt": "2026.04.05 09:28",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/640s",
+      "50MM",
+      "2026.04.05 09:28",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-06.jpg": {
@@ -1284,8 +1694,21 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-16.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/40s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.04 21:29",
     "rows": [
-      "NO EXIF",
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/40s",
+      "200MM",
+      "2026.04.04 21:29",
       "765 x 802"
     ]
   },
@@ -1368,9 +1791,22 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-14.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F2.8",
+    "shutter": "15s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.04.05 00:12",
     "rows": [
-      "NO EXIF",
-      "2200 x 1650"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F2.8",
+      "15s",
+      "28MM",
+      "2026.04.05 00:12",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-15.jpg": {
@@ -1392,9 +1828,22 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-18.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F2.8",
+    "shutter": "15s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.04.05 00:12",
     "rows": [
-      "NO EXIF",
-      "1276 x 958"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F2.8",
+      "15s",
+      "28MM",
+      "2026.04.05 00:12",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-19.jpg": {
@@ -1404,9 +1853,16 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-20.jpg": {
+    "iso": "800",
+    "aperture": "F2.8",
+    "shutter": "15s",
+    "focalLength": "28MM",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "ISO 800",
+      "F2.8",
+      "15s",
+      "28MM",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-21.jpg": {
@@ -1434,9 +1890,22 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-25.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "250",
+    "aperture": "F5.6",
+    "shutter": "1/30s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.04 21:20",
     "rows": [
-      "NO EXIF",
-      "1650 x 2200"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 250",
+      "F5.6",
+      "1/30s",
+      "200MM",
+      "2026.04.04 21:20",
+      "4608 x 3072"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-26.jpg": {
@@ -1446,9 +1915,16 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-27.jpg": {
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/40s",
+    "focalLength": "200MM",
     "rows": [
-      "NO EXIF",
-      "2200 x 1498"
+      "ISO 100",
+      "F5.6",
+      "1/40s",
+      "200MM",
+      "2615 x 1780"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-28.jpg": {
@@ -1470,9 +1946,22 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-31.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "800",
+    "aperture": "F2.8",
+    "shutter": "15s",
+    "focalLength": "28MM",
+    "capturedAt": "2026.04.04 22:54",
     "rows": [
-      "NO EXIF",
-      "2200 x 1467"
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 800",
+      "F2.8",
+      "15s",
+      "28MM",
+      "2026.04.04 22:54",
+      "7008 x 4672"
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-32.jpg": {
@@ -1524,8 +2013,21 @@ export const photoMetadata: Record<string, PhotoMetadata> = {
     ]
   },
   "/photos/optimized/wugongshan/detail/wugongshan-phone-40.jpg": {
+    "camera": "SONY ILCE-7CM2",
+    "lens": "E 28-200mm F2.8-5.6 A071",
+    "iso": "100",
+    "aperture": "F5.6",
+    "shutter": "1/40s",
+    "focalLength": "200MM",
+    "capturedAt": "2026.04.04 21:29",
     "rows": [
-      "NO EXIF",
+      "SONY ILCE-7CM2",
+      "E 28-200mm F2.8-5.6 A071",
+      "ISO 100",
+      "F5.6",
+      "1/40s",
+      "200MM",
+      "2026.04.04 21:29",
       "765 x 802"
     ]
   },

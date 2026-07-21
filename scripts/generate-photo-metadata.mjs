@@ -5,6 +5,27 @@ import sharp from "sharp";
 const root = process.cwd();
 const galleriesPath = path.join(root, "data", "galleries.ts");
 const outputPath = path.join(root, "data", "photo-metadata.ts");
+const externalAlbumRoot = "E:\\相册";
+const groupAlbumRoots = {
+  "birding": ["E:\\相册\\观鸟"],
+  "bronze-head": ["E:\\相册\\铜首"],
+  "changbai-mountain": ["E:\\相册\\沈阳-长白山"],
+  "changsha": ["E:\\相册\\长沙"],
+  "hong-kong": ["E:\\相册\\香港"],
+  "kula-kangri": ["E:\\相册\\西藏\\库拉岗日"],
+  "macau": ["E:\\相册\\澳门"],
+  "macau-fireworks": ["E:\\相册\\澳门烟花"],
+  "maclehose-trail": ["E:\\相册\\香港"],
+  "mount-siguniang": ["E:\\相册\\四川"],
+  "mount-wutai": ["E:\\相册\\山西五台山"],
+  "nanchang": ["E:\\相册\\南昌"],
+  "wuhan": ["E:\\相册\\武汉"],
+  "wugongshan": ["E:\\相册\\武功山"],
+  "xian": ["E:\\相册\\西安"],
+  "lhasa": ["E:\\相册\\西藏\\拉萨"],
+};
+const fingerprintSize = 12;
+const maxSimilarityDistance = 18;
 
 const TYPE_SIZE = {
   1: 1,
@@ -66,6 +87,67 @@ const optimizedToOriginal = (src) =>
     .replace("/wall/", "/");
 
 const toFilePath = (src) => path.join(root, "public", ...src.split("/").slice(1));
+
+async function pathExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function collectExternalImages(directory, output = new Map()) {
+  if (!(await pathExists(directory))) {
+    return output;
+  }
+
+  const entries = await fs.readdir(directory, { withFileTypes: true });
+  for (const entry of entries) {
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      await collectExternalImages(entryPath, output);
+      continue;
+    }
+
+    if (!entry.isFile() || !/\.(jpe?g)$/i.test(entry.name)) {
+      continue;
+    }
+
+    const key = entry.name.toLowerCase();
+    const images = output.get(key) ?? [];
+    images.push(entryPath);
+    output.set(key, images);
+  }
+
+  return output;
+}
+
+async function collectImagesFromRoots(roots) {
+  const files = [];
+
+  async function visit(directory) {
+    if (!(await pathExists(directory))) {
+      return;
+    }
+
+    const entries = await fs.readdir(directory, { withFileTypes: true });
+    for (const entry of entries) {
+      const entryPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        await visit(entryPath);
+      } else if (entry.isFile() && /\.(jpe?g)$/i.test(entry.name)) {
+        files.push(entryPath);
+      }
+    }
+  }
+
+  for (const rootPath of roots) {
+    await visit(rootPath);
+  }
+
+  return files;
+}
 
 const readUInt16 = (buffer, offset, littleEndian) =>
   littleEndian ? buffer.readUInt16LE(offset) : buffer.readUInt16BE(offset);
@@ -181,6 +263,19 @@ function parseExif(buffer) {
   return output;
 }
 
+function metadataScore(metadata, imageMetadata) {
+  let score = 0;
+  if (metadata.Make) score += 5;
+  if (metadata.Model) score += 5;
+  if (metadata.LensModel) score += 4;
+  if (metadata.ISO) score += 3;
+  if (metadata.FNumber) score += 3;
+  if (metadata.ExposureTime) score += 3;
+  if (metadata.FocalLength) score += 2;
+  if (metadata.DateTimeOriginal || metadata.DateTime) score += 1;
+  return score * 1000000 + (imageMetadata.exif?.length ?? 0);
+}
+
 function buildRows(metadata, width, height) {
   const rows = [];
   const camera = [metadata.Make, metadata.Model].filter(Boolean).join(" ").trim();
@@ -200,28 +295,113 @@ function buildRows(metadata, width, height) {
   return rows.filter(Boolean);
 }
 
-async function getMetadata(src) {
-  const candidates = [optimizedToOriginal(src), src];
-  let metadata;
-  let imageMetadata;
+async function readImageMetadata(filePath) {
+  const imageMetadata = await sharp(filePath).metadata();
+  const metadata = imageMetadata.exif ? parseExif(imageMetadata.exif) : {};
+  return { imageMetadata, metadata, score: metadataScore(metadata, imageMetadata) };
+}
 
-  for (const candidate of candidates) {
-    const filePath = toFilePath(candidate);
+async function getFingerprint(filePath, cache) {
+  if (cache.has(filePath)) {
+    return cache.get(filePath);
+  }
+
+  try {
+    const data = await sharp(filePath)
+      .rotate()
+      .resize(fingerprintSize, fingerprintSize, { fit: "fill" })
+      .removeAlpha()
+      .raw()
+      .toBuffer();
+    cache.set(filePath, data);
+    return data;
+  } catch {
+    cache.set(filePath, undefined);
+    return undefined;
+  }
+}
+
+function fingerprintDistance(a, b) {
+  if (!a || !b || a.length !== b.length) {
+    return Number.POSITIVE_INFINITY;
+  }
+
+  let total = 0;
+  for (let index = 0; index < a.length; index += 1) {
+    total += Math.abs(a[index] - b[index]);
+  }
+
+  return total / a.length;
+}
+
+const groupFromSrc = (src) => src.split("/")[3];
+
+async function findVisualMatch(src, groupImages, fingerprintCache) {
+  const group = groupFromSrc(src);
+  const candidateFiles = groupImages.get(group) ?? [];
+  if (candidateFiles.length === 0) {
+    return undefined;
+  }
+
+  const websitePath = toFilePath(src);
+  const websiteFingerprint = await getFingerprint(websitePath, fingerprintCache);
+  if (!websiteFingerprint) {
+    return undefined;
+  }
+
+  let best;
+  for (const filePath of candidateFiles) {
+    let candidate;
     try {
-      imageMetadata = await sharp(filePath).metadata();
-      metadata = imageMetadata.exif ? parseExif(imageMetadata.exif) : {};
-      if (Object.keys(metadata).length > 0 || candidate === src) {
-        break;
+      candidate = await readImageMetadata(filePath);
+    } catch {
+      continue;
+    }
+
+    if (candidate.score < 1000000) {
+      continue;
+    }
+
+    const candidateFingerprint = await getFingerprint(filePath, fingerprintCache);
+    const distance = fingerprintDistance(websiteFingerprint, candidateFingerprint);
+    if (!best || distance < best.distance) {
+      best = { ...candidate, distance };
+    }
+  }
+
+  return best && best.distance <= maxSimilarityDistance ? best : undefined;
+}
+
+async function getMetadata(src, externalImages, groupImages, fingerprintCache) {
+  const websiteCandidates = [optimizedToOriginal(src), src].map(toFilePath);
+  const fileName = path.basename(src).toLowerCase();
+  const externalCandidates = externalImages.get(fileName) ?? [];
+  const candidates = [...websiteCandidates, ...externalCandidates];
+  let best;
+
+  for (const filePath of candidates) {
+    try {
+      const candidate = await readImageMetadata(filePath);
+      if (!best || candidate.score > best.score) {
+        best = candidate;
       }
     } catch {
       continue;
     }
   }
 
-  if (!imageMetadata) {
+  if (!best || best.score < 1000000) {
+    const visualMatch = await findVisualMatch(src, groupImages, fingerprintCache);
+    if (visualMatch && (!best || visualMatch.score > best.score)) {
+      best = visualMatch;
+    }
+  }
+
+  if (!best) {
     return { rows: ["NO DATA"] };
   }
 
+  const { imageMetadata, metadata } = best;
   const rows = buildRows(metadata, imageMetadata.width, imageMetadata.height);
   return {
     camera: [metadata.Make, metadata.Model].filter(Boolean).join(" ").trim() || undefined,
@@ -246,9 +426,15 @@ const imagePaths = [
   ),
 ].sort();
 
+const externalImages = await collectExternalImages(externalAlbumRoot);
+const groupImages = new Map();
+for (const [group, roots] of Object.entries(groupAlbumRoots)) {
+  groupImages.set(group, await collectImagesFromRoots(roots));
+}
+const fingerprintCache = new Map();
 const entries = {};
 for (const src of imagePaths) {
-  entries[src] = await getMetadata(src);
+  entries[src] = await getMetadata(src, externalImages, groupImages, fingerprintCache);
 }
 
 const withExif = Object.values(entries).filter((entry) => entry.camera || entry.iso).length;
