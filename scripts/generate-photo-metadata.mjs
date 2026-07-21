@@ -5,6 +5,8 @@ import sharp from "sharp";
 const root = process.cwd();
 const galleriesPath = path.join(root, "data", "galleries.ts");
 const outputPath = path.join(root, "data", "photo-metadata.ts");
+const confirmedMappingPath = path.join(root, "photo-mapping-1.csv");
+const matchCandidatesPath = path.join(root, "photo-match-candidates.csv");
 const externalAlbumRoot = "E:\\相册";
 const groupAlbumRoots = {
   "birding": ["E:\\相册\\观鸟"],
@@ -95,6 +97,86 @@ async function pathExists(filePath) {
   } catch {
     return false;
   }
+}
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let field = "";
+  let inQuotes = false;
+
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    const next = text[index + 1];
+
+    if (inQuotes) {
+      if (char === '"' && next === '"') {
+        field += '"';
+        index += 1;
+      } else if (char === '"') {
+        inQuotes = false;
+      } else {
+        field += char;
+      }
+      continue;
+    }
+
+    if (char === '"') {
+      inQuotes = true;
+    } else if (char === ",") {
+      row.push(field);
+      field = "";
+    } else if (char === "\n") {
+      row.push(field.replace(/\r$/, ""));
+      rows.push(row);
+      row = [];
+      field = "";
+    } else {
+      field += char;
+    }
+  }
+
+  if (field.length > 0 || row.length > 0) {
+    row.push(field.replace(/\r$/, ""));
+    rows.push(row);
+  }
+
+  return rows.filter((values) => values.some(Boolean));
+}
+
+async function readConfirmedMapping() {
+  const sourcePath = (await pathExists(matchCandidatesPath))
+    ? matchCandidatesPath
+    : confirmedMappingPath;
+  if (!(await pathExists(sourcePath))) {
+    return new Map();
+  }
+
+  const rows = parseCsv((await fs.readFile(sourcePath, "utf8")).replace(/^\uFEFF/, ""));
+  const header = rows.shift();
+  if (!header) {
+    return new Map();
+  }
+
+  const records = rows.map((row) =>
+    Object.fromEntries(header.map((column, index) => [column, row[index] ?? ""])),
+  );
+  const mapping = new Map();
+
+  for (const record of records) {
+    const originalPath = record.candidate_path ?? record.original_path;
+    if (!record.website_path || !originalPath) {
+      continue;
+    }
+
+    const paths = mapping.get(record.website_path) ?? [];
+    if (!paths.includes(originalPath)) {
+      paths.push(originalPath);
+      mapping.set(record.website_path, paths);
+    }
+  }
+
+  return mapping;
 }
 
 async function collectExternalImages(directory, output = new Map()) {
@@ -372,11 +454,16 @@ async function findVisualMatch(src, groupImages, fingerprintCache) {
   return best && best.distance <= maxSimilarityDistance ? best : undefined;
 }
 
-async function getMetadata(src, externalImages, groupImages, fingerprintCache) {
+async function getMetadata(src, confirmedMapping, externalImages, groupImages, fingerprintCache) {
+  const confirmedOriginals = confirmedMapping.get(src) ?? [];
   const websiteCandidates = [optimizedToOriginal(src), src].map(toFilePath);
   const fileName = path.basename(src).toLowerCase();
   const externalCandidates = externalImages.get(fileName) ?? [];
-  const candidates = [...websiteCandidates, ...externalCandidates];
+  const candidates = [
+    ...confirmedOriginals,
+    ...websiteCandidates,
+    ...externalCandidates,
+  ];
   let best;
 
   for (const filePath of candidates) {
@@ -426,15 +513,26 @@ const imagePaths = [
   ),
 ].sort();
 
-const externalImages = await collectExternalImages(externalAlbumRoot);
+const confirmedMapping = await readConfirmedMapping();
+const missingMappedImages = imagePaths.filter((src) => !confirmedMapping.has(src));
+const externalImages =
+  missingMappedImages.length > 0 ? await collectExternalImages(externalAlbumRoot) : new Map();
 const groupImages = new Map();
-for (const [group, roots] of Object.entries(groupAlbumRoots)) {
-  groupImages.set(group, await collectImagesFromRoots(roots));
+if (missingMappedImages.length > 0) {
+  for (const [group, roots] of Object.entries(groupAlbumRoots)) {
+    groupImages.set(group, await collectImagesFromRoots(roots));
+  }
 }
 const fingerprintCache = new Map();
 const entries = {};
 for (const src of imagePaths) {
-  entries[src] = await getMetadata(src, externalImages, groupImages, fingerprintCache);
+  entries[src] = await getMetadata(
+    src,
+    confirmedMapping,
+    externalImages,
+    groupImages,
+    fingerprintCache,
+  );
 }
 
 const withExif = Object.values(entries).filter((entry) => entry.camera || entry.iso).length;
@@ -457,4 +555,6 @@ export const photoMetadata: Record<string, PhotoMetadata> = ${JSON.stringify(
 `;
 
 await fs.writeFile(outputPath, file);
-console.log(`Generated metadata for ${imagePaths.length} images (${withExif} with EXIF).`);
+console.log(
+  `Generated metadata for ${imagePaths.length} images (${withExif} with EXIF, ${confirmedMapping.size} mapped originals).`,
+);
